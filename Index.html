@@ -7,222 +7,710 @@
 <title>For Yashhi — A Birthday Surprise</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
-:root{--bg:#100c0d;--panel:#171112;--red:#8e2634;--red2:#d7b77d;--gold:#d9bd83;--muted:#c2b5b2;--white:#f6eee8}
+
+:root {
+  --bg:#100c0d;
+  --panel:#171112;
+  --red:#8e2634;
+  --red2:#d7b77d;
+  --gold:#d9bd83;
+  --muted:#c2b5b2;
+  --white:#f6eee8;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 50% 18%,#241416 0%,#130e0f 42%,#0d0b0c 85%);color:var(--white);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#d9bd83 0.65px,transparent .65px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+body{
+ margin:0;
+ background:radial-gradient(ellipse at 50% 18%,#241416 0%,#130e0f 42%,#0d0b0c 85%);
+ color:var(--white);
+ font-family:'DM Sans',sans-serif;
+ min-height:100vh;
+ overflow-x:hidden
+}
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ opacity:.18;
+ background-image:radial-gradient(#d9bd83 .65px,transparent .65px);
+ background-size:42px 42px;
+ mask-image:linear-gradient(to bottom,black,transparent 90%)
+}
 button{font:inherit}
-.wrap{width:min(100% - 36px,980px);margin:auto;position:relative;z-index:1}
-header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d9bd831c}
-.brand{letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:#c7b48e}
-.brand b{color:var(--gold);font-weight:600}
-.sound{border:1px solid #cdb47a55;color:#e7d8bc;background:#ffffff05;border-radius:99px;padding:9px 14px;font-size:11px;cursor:pointer}
-.sound:hover,.btn:hover{transform:translateY(-2px);border-color:#ff6579}
-.hero{text-align:center;padding:94px 0 48px;min-height:570px;display:flex;flex-direction:column;justify-content:center}
-.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
-h1{font:400 clamp(58px,12vw,112px)/.92 'Cormorant Garamond',serif;margin:27px 0 27px;letter-spacing:-.035em}
+.wrap{
+ width:min(100% - 36px,980px);
+ margin:auto;
+ position:relative;
+ z-index:1
+}
+header{
+ height:76px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ border-bottom:1px solid #d9bd831c
+}
+.brand{
+ letter-spacing:.22em;
+ text-transform:uppercase;
+ font-size:10px;
+ color:#c7b48e
+}
+.brand b{color:var(--gold)}
+.sound{
+ border:1px solid #cdb47a55;
+ color:#e7d8bc;
+ background:#ffffff05;
+ border-radius:99px;
+ padding:9px 14px;
+ font-size:11px;
+ cursor:pointer
+}
+.sound:hover,.btn:hover{
+ transform:translateY(-2px);
+ border-color:#ff6579
+}
+.hero{
+ text-align:center;
+ padding:94px 0 48px;
+ min-height:570px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center
+}
+.eyebrow{
+ font-size:10px;
+ letter-spacing:.38em;
+ text-transform:uppercase;
+ color:var(--gold)
+}
+h1{
+ font:400 clamp(58px,12vw,112px)/.92 'Cormorant Garamond',serif;
+ margin:27px 0;
+ letter-spacing:-.035em
+}
 h1 span{color:var(--gold);font-style:italic}
-.sub{color:#c8bdbb;font-size:clamp(14px,3.5vw,17px);line-height:2;max-width:480px;margin:0 auto}
-.rule{height:1px;width:94px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:48px auto 0}
-.scene{position:relative;min-height:560px;display:grid;place-items:center;perspective:1100px;overflow:hidden}
-.glow{position:absolute;width:300px;height:220px;border-radius:50%;background:#b99a5c20;filter:blur(65px);top:105px}
-.cake-wrap{position:relative;width:280px;height:310px;display:flex;align-items:flex-end;justify-content:center;transform-style:preserve-3d;animation:cakeReveal 1.8s cubic-bezier(.18,.8,.2,1) both,float 5s 1.8s ease-in-out infinite;opacity:0}
-@keyframes cakeReveal{0%{opacity:0;transform:translateY(85px) rotateY(-38deg) rotateX(24deg) scale(.52);filter:blur(8px)}65%{opacity:1;transform:translateY(-8px) rotateY(12deg) rotateX(2deg) scale(1.04);filter:blur(0)}100%{opacity:1;transform:translateY(0) rotateY(0) rotateX(3deg) scale(1)}}
-@keyframes float{0%,100%{translate:0 0;rotate:0 1 0 0deg}50%{translate:0 -9px;rotate:0 1 0 1deg}}
-.scene:after{content:"";position:absolute;inset:8% 12%;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse,transparent 35%,#08080c 78%);opacity:.2}
-.plate{position:absolute;bottom:22px;width:280px;height:28px;border-radius:50%;background:linear-gradient(180deg,#e9d5c2,#aa8576 48%,#3c2827);box-shadow:0 17px 30px #0009,0 0 45px #e3314a25}
-.tier{position:absolute;bottom:43px;width:230px;height:90px;border-radius:13px 13px 20px 20px;background:linear-gradient(90deg,#5c2730,#9c4650 23%,#c77d78 48%,#91404b 78%,#48202a);box-shadow:inset 0 9px 12px #ffb0ad44,inset 0 -12px 15px #26070e88,0 14px 18px #0008;transform:rotateX(-3deg)}
-.tier:before{content:"";position:absolute;left:0;right:0;top:-11px;height:25px;border-radius:50%;background:linear-gradient(180deg,#ffe2d7,#c75a65 80%);box-shadow:inset 0 -4px 5px #8c2434}
-.tier:after{content:"";position:absolute;left:15px;right:15px;top:19px;height:5px;border-radius:50%;background:#ffd0c34a;filter:blur(2px)}
-.topper{position:absolute;bottom:127px;width:165px;height:65px;border-radius:12px 12px 16px 16px;background:linear-gradient(90deg,#60303a,#a95860 35%,#d18a83 52%,#8c3a49);box-shadow:inset 0 8px 10px #ffc1b244,inset 0 -8px 10px #3a0711aa}
-.topper:before{content:"";position:absolute;top:-9px;left:0;right:0;height:20px;border-radius:50%;background:linear-gradient(#fff0e5,#d36b72)}
-.drip{position:absolute;top:0;left:22px;width:13px;height:25px;border-radius:0 0 9px 9px;background:#f3c4b8;box-shadow:35px 2px 0 -1px #f3c4b8,73px 0 0 #f3c4b8,112px 3px 0 -2px #f3c4b8}
-.candle{position:absolute;bottom:184px;width:10px;height:53px;border-radius:4px;background:repeating-linear-gradient(135deg,#fff0e7 0 7px,#c72c45 7px 14px);box-shadow:0 0 8px #ffbec0}
-.candle.c1{transform:translateX(-35px) rotate(-5deg)}.candle.c2{transform:translateX(0)}.candle.c3{transform:translateX(35px) rotate(5deg)}
-.flame{position:absolute;top:-22px;left:1px;width:8px;height:18px;border-radius:60% 40% 55% 45%;background:radial-gradient(ellipse at 50% 70%,#fff7c4 0 20%,#ffb33e 42%,#fa4a25 75%);filter:drop-shadow(0 0 8px #ff8b35);animation:flicker .16s infinite alternate;transform-origin:bottom}
-@keyframes flicker{to{transform:rotate(7deg) scale(.88);filter:drop-shadow(0 0 13px #ffb13b)}}
+.sub{
+ color:#c8bdbb;
+ font-size:clamp(14px,3.5vw,17px);
+ line-height:2;
+ max-width:480px;
+ margin:0 auto
+}
+.rule{
+ height:1px;
+ width:94px;
+ background:linear-gradient(90deg,transparent,var(--gold),transparent);
+ margin:48px auto 0
+}
+.scene{
+ position:relative;
+ min-height:560px;
+ display:grid;
+ place-items:center;
+ perspective:1100px;
+ overflow:hidden
+}
+.glow{
+ position:absolute;
+ width:300px;
+ height:220px;
+ border-radius:50%;
+ background:#b99a5c20;
+ filter:blur(65px);
+ top:105px
+}
+.cake-wrap{
+ position:relative;
+ width:280px;
+ height:310px;
+ display:flex;
+ align-items:flex-end;
+ justify-content:center;
+ transform-style:preserve-3d;
+ animation:cakeReveal 1.8s cubic-bezier(.18,.8,.2,1) both,float 5s 1.8s ease-in-out infinite;
+ opacity:0
+}
+@keyframes cakeReveal{
+ 0%{opacity:0;transform:translateY(85px) rotateY(-38deg) rotateX(24deg) scale(.52);filter:blur(8px)}
+ 65%{opacity:1;transform:translateY(-8px) rotateY(12deg) rotateX(2deg) scale(1.04);filter:blur(0)}
+ 100%{opacity:1;transform:translateY(0) rotateY(0) rotateX(3deg) scale(1)}
+}
+@keyframes float{
+ 0%,100%{translate:0 0;rotate:0 1 0 0deg}
+ 50%{translate:0 -9px;rotate:0 1 0 1deg}
+}
+.scene:after{
+ content:"";
+ position:absolute;
+ inset:8% 12%;
+ border-radius:50%;
+ pointer-events:none;
+ background:radial-gradient(ellipse,transparent 35%,#08080c 78%);
+ opacity:.2
+}
+.plate{
+ position:absolute;
+ bottom:22px;
+ width:280px;
+ height:28px;
+ border-radius:50%;
+ background:linear-gradient(180deg,#e9d5c2,#aa8576 48%,#3c2827);
+ box-shadow:0 17px 30px #0009,0 0 45px #e3314a25
+}
+.tier{
+ position:absolute;
+ bottom:43px;
+ width:230px;
+ height:90px;
+ border-radius:13px 13px 20px 20px;
+ background:linear-gradient(90deg,#5c2730,#9c4650 23%,#c77d78 48%,#91404b 78%,#48202a);
+ box-shadow:inset 0 9px 12px #ffb0ad44,inset 0 -12px 15px #26070e88,0 14px 18px #0008;
+ transform:rotateX(-3deg)
+}
+.tier:before{
+ content:"";
+ position:absolute;
+ left:0;right:0;top:-11px;
+ height:25px;
+ border-radius:50%;
+ background:linear-gradient(180deg,#ffe2d7,#c75a65 80%);
+ box-shadow:inset 0 -4px 5px #8c2434
+}
+.tier:after{
+ content:"";
+ position:absolute;
+ left:15px;right:15px;top:19px;
+ height:5px;
+ border-radius:50%;
+ background:#ffd0c34a;
+ filter:blur(2px)
+}
+.topper{
+ position:absolute;
+ bottom:127px;
+ width:165px;
+ height:65px;
+ border-radius:12px 12px 16px 16px;
+ background:linear-gradient(90deg,#60303a,#a95860 35%,#d18a83 52%,#8c3a49);
+ box-shadow:inset 0 8px 10px #ffc1b244,inset 0 -8px 10px #3a0711aa
+}
+.topper:before{
+ content:"";
+ position:absolute;
+ top:-9px;left:0;right:0;
+ height:20px;
+ border-radius:50%;
+ background:linear-gradient(#fff0e5,#d36b72)
+}
+.drip{
+ position:absolute;
+ top:0;left:22px;
+ width:13px;height:25px;
+ border-radius:0 0 9px 9px;
+ background:#f3c4b8;
+ box-shadow:35px 2px 0 -1px #f3c4b8,73px 0 0 #f3c4b8,112px 3px 0 -2px #f3c4b8
+}
+.candle{
+ position:absolute;
+ bottom:184px;
+ width:10px;height:53px;
+ border-radius:4px;
+ background:repeating-linear-gradient(135deg,#fff0e7 0 7px,#c72c45 7px 14px);
+ box-shadow:0 0 8px #ffbec0
+}
+.candle.c1{transform:translateX(-35px) rotate(-5deg)}
+.candle.c2{transform:translateX(0)}
+.candle.c3{transform:translateX(35px) rotate(5deg)}
+.flame{
+ position:absolute;
+ top:-22px;left:1px;
+ width:8px;height:18px;
+ border-radius:60% 40% 55% 45%;
+ background:radial-gradient(ellipse at 50% 70%,#fff7c4 0 20%,#ffb33e 42%,#fa4a25 75%);
+ filter:drop-shadow(0 0 8px #ff8b35);
+ animation:flicker .16s infinite alternate;
+ transform-origin:bottom
+}
+@keyframes flicker{
+ to{transform:rotate(7deg) scale(.88);filter:drop-shadow(0 0 13px #ffb13b)}
+}
 .flame.out{display:none}
-.cake-label{position:absolute;bottom:73px;color:#ffe4dc;font:italic 17px 'Cormorant Garamond',serif;letter-spacing:.08em;text-shadow:0 2px 6px #570b18}
-.spark{position:absolute;color:#ffb8ad;opacity:.8;animation:twinkle 3s ease-in-out infinite}
-.s1{top:65px;left:17%}.s2{top:145px;right:14%;animation-delay:1s}.s3{top:45px;right:26%;animation-delay:1.7s}.s4{top:230px;left:24%;animation-delay:.5s}
-@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 auto 100px}
-.btn{border:1px solid #c9ad70;background:transparent;color:white;padding:13px 21px;border-radius:4px;letter-spacing:.08em;text-transform:uppercase;font-size:10px;letter-spacing:.2em;cursor:pointer;transition:.25s;box-shadow:none}
-.btn.secondary{background:transparent;border-color:#c9ad7055;color:#e6d9c6;box-shadow:none}
+.cake-label{
+ position:absolute;
+ bottom:73px;
+ color:#ffe4dc;
+ font:italic 17px 'Cormorant Garamond',serif;
+ letter-spacing:.08em;
+ text-shadow:0 2px 6px #570b18
+}
+.spark{
+ position:absolute;
+ color:#ffb8ad;
+ opacity:.8;
+ animation:twinkle 3s ease-in-out infinite
+}
+.s1{top:65px;left:17%}
+.s2{top:145px;right:14%;animation-delay:1s}
+.s3{top:45px;right:26%;animation-delay:1.7s}
+.s4{top:230px;left:24%;animation-delay:.5s}
+@keyframes twinkle{
+ 0%,100%{opacity:.15;transform:scale(.7)}
+ 50%{opacity:1;transform:scale(1.25)}
+}
+.actions{
+ display:flex;
+ gap:12px;
+ justify-content:center;
+ flex-wrap:wrap;
+ margin:0 auto 100px
+}
+.btn{
+ border:1px solid #c9ad70;
+ background:transparent;
+ color:white;
+ padding:13px 21px;
+ border-radius:4px;
+ letter-spacing:.2em;
+ text-transform:uppercase;
+ font-size:10px;
+ cursor:pointer;
+ transition:.25s;
+ box-shadow:none
+}
+.btn.secondary{
+ background:transparent;
+ border-color:#c9ad7055;
+ color:#e6d9c6;
+ box-shadow:none
+}
 .btn:disabled{opacity:.55;cursor:default;transform:none}
-.section{margin:0 auto 90px;padding:58px 25px;border:0;border-top:1px solid #d9bd8328;border-bottom:1px solid #d9bd8328;background:transparent;border-radius:0;max-width:760px;text-align:center;backdrop-filter:none}
-.section h2{font:400 clamp(38px,8vw,62px)/1.05 'Cormorant Garamond',serif;margin:22px 0 18px}
-.section p{color:#c4b8b5;font:400 17px/1.9 'Cormorant Garamond',serif;margin:0 auto;max-width:510px}
-.gift-area{padding:22px 0 45px}
-.envelope{margin:35px auto 14px;width:190px;height:128px;position:relative;cursor:pointer;filter:drop-shadow(0 18px 22px #0009);perspective:800px;transition:transform .35s}
+.section{
+ margin:0 auto 90px;
+ padding:58px 25px;
+ border:0;
+ border-top:1px solid #d9bd8328;
+ border-bottom:1px solid #d9bd8328;
+ background:transparent;
+ border-radius:0;
+ max-width:760px;
+ text-align:center
+}
+.section h2{
+ font:400 clamp(38px,8vw,62px)/1.05 'Cormorant Garamond',serif;
+ margin:22px 0 18px
+}
+.section p{
+ color:#c4b8b5;
+ font:400 17px/1.9 'Cormorant Garamond',serif;
+ margin:0 auto;
+ max-width:510px
+}
+.envelope{
+ margin:35px auto 14px;
+ width:190px;height:128px;
+ position:relative;
+ cursor:pointer;
+ filter:drop-shadow(0 18px 22px #0009);
+ perspective:800px;
+ transition:transform .35s
+}
 .envelope:hover{transform:translateY(-6px)}
-.env-back{position:absolute;inset:0;background:linear-gradient(145deg,#4e2029,#8e3947 55%,#421923);border-radius:5px}
-.env-paper{position:absolute;left:12px;right:12px;bottom:8px;height:102px;background:linear-gradient(150deg,#fff0e8,#dcbab0);border-radius:3px;transition:transform 1s cubic-bezier(.2,.8,.2,1);z-index:1}
-.env-paper:before{content:"A little note for you";position:absolute;inset:34px 5px auto;text-align:center;font:italic 18px 'Cormorant Garamond',serif;color:#8b2438}
-.env-front{position:absolute;inset:0;z-index:3;background:linear-gradient(145deg,#71303b,#ad5960 50%,#682633);clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:0 0 5px 5px}
-.env-flap{position:absolute;inset:0 0 auto;height:72%;z-index:4;transform-origin:top;transform:rotateX(0);transition:transform .85s cubic-bezier(.2,.7,.2,1);background:linear-gradient(160deg,#c17c77,#793443);clip-path:polygon(0 0,100% 0,50% 100%);backface-visibility:hidden}
-.env-seal{position:absolute;z-index:5;left:calc(50% - 16px);top:48px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#ffe3d4,#c58a7c 70%,#7c2836);color:#7c172b;font:18px 'Cormorant Garamond',serif;box-shadow:0 3px 8px #4b081b66;transition:opacity .25s}
+.env-back{
+ position:absolute;
+ inset:0;
+ background:linear-gradient(145deg,#4e2029,#8e3947 55%,#421923);
+ border-radius:5px
+}
+.env-paper{
+ position:absolute;
+ left:12px;right:12px;bottom:8px;
+ height:102px;
+ background:linear-gradient(150deg,#fff0e8,#dcbab0);
+ border-radius:3px;
+ transition:transform 1s cubic-bezier(.2,.8,.2,1);
+ z-index:1
+}
+.env-paper:before{
+ content:"A little note for you";
+ position:absolute;
+ inset:34px 5px auto;
+ text-align:center;
+ font:italic 18px 'Cormorant Garamond',serif;
+ color:#8b2438
+}
+.env-front{
+ position:absolute;
+ inset:0;
+ z-index:3;
+ background:linear-gradient(145deg,#71303b,#ad5960 50%,#682633);
+ clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);
+ border-radius:0 0 5px 5px
+}
+.env-flap{
+ position:absolute;
+ inset:0 0 auto;
+ height:72%;
+ z-index:4;
+ transform-origin:top;
+ transition:transform .85s cubic-bezier(.2,.7,.2,1);
+ background:linear-gradient(160deg,#c17c77,#793443);
+ clip-path:polygon(0 0,100% 0,50% 100%);
+ backface-visibility:hidden
+}
+.env-seal{
+ position:absolute;
+ z-index:5;
+ left:calc(50% - 16px);
+ top:48px;
+ width:32px;height:32px;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+ background:radial-gradient(circle at 35% 30%,#ffe3d4,#c58a7c 70%,#7c2836);
+ color:#7c172b;
+ font:18px 'Cormorant Garamond',serif;
+ box-shadow:0 3px 8px #4b081b66;
+ transition:opacity .25s
+}
 .envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
 .envelope.open .env-paper{transform:translateY(-72px);transition-delay:.35s}
 .envelope.open .env-seal{opacity:0}
-.hint{font-size:10px!important;letter-spacing:.16em;text-transform:uppercase;color:#e6a3a8!important}
-.music-card{max-width:760px;margin:0 auto 90px;padding:50px 24px;border:1px solid #d9bd8328;border-radius:0;background:linear-gradient(135deg,#1b1415aa,#100d12aa);text-align:center}
-.music-card .music-kicker{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
-.music-card h2{font:500 31px 'Cormorant Garamond',serif;margin:8px 0}
-.music-card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 auto 16px;max-width:420px}
-.player{display:none;margin:18px auto 0;max-width:560px;aspect-ratio:16/9}
+.hint{
+ font-size:10px!important;
+ letter-spacing:.16em;
+ text-transform:uppercase;
+ color:#e6a3a8!important
+}
+.music-card{
+ max-width:760px;
+ margin:0 auto 90px;
+ padding:50px 24px;
+ border:1px solid #d9bd8328;
+ background:linear-gradient(135deg,#1b1415aa,#100d12aa);
+ text-align:center
+}
+.music-card .music-kicker{
+ font-size:10px;
+ letter-spacing:.25em;
+ text-transform:uppercase;
+ color:var(--gold)
+}
+.music-card h2{
+ font:500 31px 'Cormorant Garamond',serif;
+ margin:8px 0
+}
+.music-card p{
+ font-size:12px;
+ line-height:1.7;
+ color:var(--muted);
+ margin:0 auto 16px;
+ max-width:420px
+}
+.player{
+ display:none;
+ margin:18px auto 0;
+ max-width:560px;
+ aspect-ratio:16/9
+}
 .player.show{display:block;animation:reveal .6s ease both}
-.player iframe{width:100%;height:100%;border:0;border-radius:7px}
-.letter{display:none;text-align:left;max-width:690px;margin:20px auto 70px;padding:clamp(25px,6vw,48px);background:linear-gradient(145deg,#f0e4d8,#d8c3ad);color:#321d1d;border-radius:5px;box-shadow:0 25px 70px #0008;position:relative}
+.player iframe{
+ width:100%;
+ height:100%;
+ border:0;
+ border-radius:7px
+}
+.letter{
+ display:none;
+ text-align:left;
+ max-width:690px;
+ margin:20px auto 70px;
+ padding:clamp(25px,6vw,48px);
+ background:linear-gradient(145deg,#f0e4d8,#d8c3ad);
+ color:#321d1d;
+ border-radius:5px;
+ box-shadow:0 25px 70px #0008;
+ position:relative
+}
 .letter.show{display:block;animation:reveal .8s ease both}
-@keyframes reveal{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
-.letter .to{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#9b3445}
-.letter h2{font:600 43px 'Cormorant Garamond',serif;margin:12px 0 20px;color:#67182a}
-.letter p{font:400 17px/1.8 'Cormorant Garamond',serif;margin:0 0 15px}
-.sign{font:italic 24px 'Cormorant Garamond',serif;text-align:right;margin-top:28px;color:#7d2034}
-footer{text-align:center;padding:40px 0 50px;color:#988b83;font-size:10px;letter-spacing:.22em}
+@keyframes reveal{
+ from{opacity:0;transform:translateY(20px) scale(.98)}
+ to{opacity:1;transform:none}
+}
+.letter .to{
+ font-size:10px;
+ letter-spacing:.25em;
+ text-transform:uppercase;
+ color:#9b3445
+}
+.letter h2{
+ font:600 43px 'Cormorant Garamond',serif;
+ margin:12px 0 20px;
+ color:#67182a
+}
+.letter p{
+ font:400 17px/1.8 'Cormorant Garamond',serif;
+ margin:0 0 15px
+}
+.sign{
+ font:italic 24px 'Cormorant Garamond',serif;
+ text-align:right;
+ margin-top:28px;
+ color:#7d2034
+}
+footer{
+ text-align:center;
+ padding:40px 0 50px;
+ color:#988b83;
+ font-size:10px;
+ letter-spacing:.22em
+}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:5}
-@media(max-width:560px){.hero{padding-top:53px;min-height:620px}.scene{min-height:420px}.cake-wrap{scale:.88;animation:cakeReveal 1.8s cubic-bezier(.18,.8,.2,1) both,float 5s 1.8s ease-in-out infinite}.section{padding:27px 18px}.section h2{font-size:34px}.letter p{font-size:16px}.actions{padding:0 12px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+@media(max-width:560px){
+ .hero{padding-top:53px;min-height:620px}
+ .scene{min-height:420px}
+ .cake-wrap{
+  scale:.88;
+  animation:cakeReveal 1.8s cubic-bezier(.18,.8,.2,1) both,float 5s 1.8s ease-in-out infinite
+ }
+ .section{padding:27px 18px}
+ .section h2{font-size:34px}
+ .letter p{font-size:16px}
+ .actions{padding:0 12px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{
+  animation-duration:.01ms!important;
+  animation-iteration-count:1!important;
+  scroll-behavior:auto!important
+ }
+}
 </style>
 </head>
+
 <body>
 <canvas id="confetti"></canvas>
 <div class="wrap">
-  <header>
-    <div class="brand"><b>Y</b> · A little celebration</div>
-    <button class="sound" id="soundBtn" type="button">♫ Taylor Swift</button>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow">01 &nbsp; / &nbsp; A little birthday story</div>
-      <h1>For <span>Yashhi.</span></h1>
-      <p class="sub">Not just another birthday wish.<br>A little something, made with you in mind.</p>
-      <div class="rule"></div>
-      <button class="btn secondary" id="enterBtn" type="button" style="margin:46px auto 0;min-width:min(100%,360px);padding:20px 24px">Enter your little surprise &nbsp; ↘</button>
-    </section>
+<header>
+ <div class="brand"><b>Y</b> · A little celebration</div>
+ <button class="sound" id="soundBtn" type="button">♫ Taylor Swift</button>
+</header>
 
-    <section class="section" style="margin-top:15px;margin-bottom:0;border:0;padding:35px 20px 5px"><div class="eyebrow">02 &nbsp; / &nbsp; Make a wish</div><h2>One candle.<br><i>A thousand wishes.</i></h2><p>May this new chapter be softer, brighter, and full of everything that makes your heart happy.</p></section>
-    <section class="scene" aria-label="A three-dimensional style birthday cake with three candles">
-      <div class="glow"></div>
-      <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span><span class="spark s4">✧</span>
-      <div class="cake-wrap">
-        <div class="plate"></div>
-        <div class="tier"></div>
-        <div class="topper"><div class="drip"></div></div>
-        <div class="candle c1"><i class="flame"></i></div>
-        <div class="candle c2"><i class="flame"></i></div>
-        <div class="candle c3"><i class="flame"></i></div>
-        <div class="cake-label">made with warm wishes</div>
-      </div>
-    </section>
+<main>
+<section class="hero">
+ <div class="eyebrow">01 / A little birthday story</div>
+ <h1>For <span>Yashhi.</span></h1>
+ <p class="sub">
+  Not just another birthday wish.<br>
+  A little something, made with you in mind.
+ </p>
+ <div class="rule"></div>
+ <button class="btn secondary" id="enterBtn"
+ style="margin:46px auto 0;min-width:min(100%,360px);padding:20px 24px">
+ Enter your little surprise ↘
+ </button>
+</section>
 
-    <div class="actions">
-      <button class="btn" id="blowBtn" type="button">Make a wish ✨</button>
-      <button class="btn secondary" id="giftJump" type="button">Your surprise ↓</button>
-    </div>
+<section class="section" style="margin-top:15px;margin-bottom:0;border:0;padding:35px 20px 5px">
+ <div class="eyebrow">02 / Make a wish</div>
+ <h2>One candle.<br><i>A thousand wishes.</i></h2>
+ <p>May this new chapter be softer, brighter, and full of everything that makes your heart happy.</p>
+</section>
 
-    <section class="section" id="giftSection">
-      <div class="eyebrow">Sealed with a little love</div>
-      <h2>A letter, just for you.</h2>
-      <p>Take a breath, then open the envelope. There's a little message waiting inside.</p>
-      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open your birthday envelope">
-        <div class="env-back"></div><div class="env-paper"></div><div class="env-front"></div>
-        <div class="env-flap"></div><div class="env-seal">Y</div>
-      </div>
-      <p class="hint" id="giftHint">Tap the seal to open your letter</p>
-    </section>
+<section class="scene">
+ <div class="glow"></div>
+ <span class="spark s1">✦</span>
+ <span class="spark s2">✧</span>
+ <span class="spark s3">✦</span>
+ <span class="spark s4">✧</span>
+ <div class="cake-wrap">
+  <div class="plate"></div>
+  <div class="tier"></div>
+  <div class="topper"><div class="drip"></div></div>
+  <div class="candle c1"><i class="flame"></i></div>
+  <div class="candle c2"><i class="flame"></i></div>
+  <div class="candle c3"><i class="flame"></i></div>
+  <div class="cake-label">made with warm wishes</div>
+ </div>
+</section>
 
-    <section class="music-card">
-      <div class="music-kicker">A little soundtrack for your day</div>
-      <h2>For the music lover in you. ♫</h2>
-      <p>A Taylor Swift moment, picked to make this birthday surprise feel even more like yours. Press play when you're ready.</p>
-      <button class="btn" id="musicBtn" type="button">Play your song ♡</button>
-      <div class="player" id="player">
-        <iframe id="youtubePlayer" title="Taylor Swift song" src="https://www.youtube-nocookie.com/embed/cvUAzpn48xA?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p style="margin-top:12px;font-size:10px">The song plays through YouTube. If embedding is unavailable, <a href="https://youtu.be/cvUAzpn48xA" target="_blank" rel="noopener" style="color:#ff9aa7">open it on YouTube</a>.</p>
-    </section>
-
-    <article class="letter" id="letter">
-      <div class="to">A note, just for you</div>
-      <h2>Dear Yashhi,</h2>
-      <p>Happy Birthday! I hope today brings you the kind of happiness that stays with you long after the candles have gone out.</p>
-      <p>May this new year of your life be filled with peaceful days, unexpected little joys, exciting opportunities, and people who appreciate you for exactly who you are. Keep creating, keep growing, and never lose the lovely spark that makes you you.</p>
-      <p>Thank you for being a part of my world. I hope you get a thousand reasons to smile this year, and that even the ordinary moments turn into memories worth keeping.</p>
-      <p>Make a wish, enjoy your day, and remember that you deserve all the good things coming your way.</p>
-      <div class="sign">With warm wishes,<br>Yash ♡</div>
-    </article>
-  </main>
-  <footer>MADE WITH CARE · JUST FOR YASHHI</footer>
+<div class="actions">
+ <button class="btn" id="blowBtn">Make a wish ✨</button>
+ <button class="btn secondary" id="giftJump">Your surprise ↓</button>
 </div>
+
+<section class="section" id="giftSection">
+ <div class="eyebrow">Sealed with a little love</div>
+ <h2>A letter, just for you.</h2>
+ <p>Take a breath, then open the envelope. There's a little message waiting inside.</p>
+ <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open your birthday envelope">
+  <div class="env-back"></div>
+  <div class="env-paper"></div>
+  <div class="env-front"></div>
+  <div class="env-flap"></div>
+  <div class="env-seal">Y</div>
+ </div>
+ <p class="hint" id="giftHint">Tap the seal to open your letter</p>
+</section>
+
+<section class="music-card">
+ <div class="music-kicker">A little soundtrack for your day</div>
+ <h2>For the music lover in you. ♫</h2>
+ <p>A Taylor Swift moment, picked to make this birthday surprise feel even more like yours. Press play when you're ready.</p>
+ <button class="btn" id="musicBtn">Play your song ♡</button>
+ <div class="player" id="player">
+  <iframe id="youtubePlayer"
+   title="Taylor Swift song"
+   src="https://www.youtube-nocookie.com/embed/cvUAzpn48xA?rel=0&modestbranding=1"
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+   referrerpolicy="strict-origin-when-cross-origin"
+   allowfullscreen></iframe>
+ </div>
+ <p style="margin-top:12px;font-size:10px">
+  The song plays through YouTube. If embedding is unavailable,
+  <a href="https://youtu.be/cvUAzpn48xA" target="_blank" rel="noopener" style="color:#ff9aa7">open it on YouTube</a>.
+ </p>
+</section>
+
+<article class="letter" id="letter">
+ <div class="to">A note, just for you</div>
+ <h2>Dear Yashhi,</h2>
+ <p>Happy Birthday! I hope today brings you the kind of happiness that stays with you long after the candles have gone out.</p>
+ <p>May this new year of your life be filled with peaceful days, unexpected little joys, exciting opportunities, and people who appreciate you for exactly who you are. Keep creating, keep growing, and never lose the lovely spark that makes you you.</p>
+ <p>Thank you for being a part of my world. I hope you get a thousand reasons to smile this year, and that even the ordinary moments turn into memories worth keeping.</p>
+ <p>Make a wish, enjoy your day, and remember that you deserve all the good things coming your way.</p>
+ <div class="sign">With warm wishes,<br>Yash ♡</div>
+</article>
+</main>
+
+<footer>MADE WITH CARE · JUST FOR YASHHI</footer>
+</div>
+
 <script>
 const flames = [...document.querySelectorAll('.flame')];
 const blowBtn = document.getElementById('blowBtn');
 const envelope = document.getElementById('envelope');
 const letter = document.getElementById('letter');
 const giftHint = document.getElementById('giftHint');
-let blown = false, opened = false;
+
+let blown = false;
+let opened = false;
 
 function celebrate(){
-  const canvas = document.getElementById('confetti');
-  const ctx = canvas.getContext('2d');
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = innerWidth*dpr; canvas.height = innerHeight*dpr;
-  canvas.style.width = innerWidth+'px'; canvas.style.height = innerHeight+'px';
-  ctx.scale(dpr,dpr);
-  const pieces = Array.from({length:125},()=>({
-    x:Math.random()*innerWidth,y:-20-Math.random()*innerHeight*.4,
-    w:3+Math.random()*5,h:5+Math.random()*8,
-    vx:(Math.random()-.5)*3,vy:2+Math.random()*4,
-    r:Math.random()*6,vr:(Math.random()-.5)*.15,
-    color:['#f05a70','#f4c7b5','#d9a0a0','#f8e5c9','#a51d37'][Math.floor(Math.random()*5)]
-  }));
-  let frame=0;
-  function draw(){
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-    pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.vy+=.018;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});
-    frame++; if(frame<190) requestAnimationFrame(draw); else ctx.clearRect(0,0,innerWidth,innerHeight);
-  }
-  draw();
+ const canvas = document.getElementById('confetti');
+ const ctx = canvas.getContext('2d');
+ const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+ canvas.width = innerWidth * dpr;
+ canvas.height = innerHeight * dpr;
+ canvas.style.width = innerWidth + 'px';
+ canvas.style.height = innerHeight + 'px';
+ ctx.scale(dpr,dpr);
+
+ const pieces = Array.from({length:125},()=>({
+  x:Math.random()*innerWidth,
+  y:-20-Math.random()*innerHeight*.4,
+  w:3+Math.random()*5,
+  h:5+Math.random()*8,
+  vx:(Math.random()-.5)*3,
+  vy:2+Math.random()*4,
+  r:Math.random()*6,
+  vr:(Math.random()-.5)*.15,
+  color:['#f05a70','#f4c7b5','#d9a0a0','#f8e5c9','#a51d37'][Math.floor(Math.random()*5)]
+ }));
+
+ let frame=0;
+
+ function draw(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+
+  pieces.forEach(p=>{
+   p.x+=p.vx;
+   p.y+=p.vy;
+   p.r+=p.vr;
+   p.vy+=.018;
+
+   ctx.save();
+   ctx.translate(p.x,p.y);
+   ctx.rotate(p.r);
+   ctx.fillStyle=p.color;
+   ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+   ctx.restore();
+  });
+
+  frame++;
+  if(frame<190) requestAnimationFrame(draw);
+  else ctx.clearRect(0,0,innerWidth,innerHeight);
+ }
+
+ draw();
 }
+
 blowBtn.addEventListener('click',()=>{
-  if(!blown){
-    flames.forEach(f=>f.classList.add('out')); blown=true;
-    blowBtn.textContent='Wish made ✓'; blowBtn.disabled=true; celebrate();
-  }
+ if(!blown){
+  flames.forEach(f=>f.classList.add('out'));
+  blown=true;
+  blowBtn.textContent='Wish made ✓';
+  blowBtn.disabled=true;
+  celebrate();
+ }
 });
+
 function openEnvelope(){
-  if(opened)return;
-  opened=true;
-  envelope.classList.add('open');
-  giftHint.textContent='Your letter is opening…';
-  setTimeout(()=>{
-    letter.classList.add('show');
-    giftHint.textContent='A little message from Yash';
-    letter.scrollIntoView({behavior:'smooth',block:'center'});
-    celebrate();
-  },1050);
+ if(opened)return;
+
+ opened=true;
+ envelope.classList.add('open');
+ giftHint.textContent='Your letter is opening…';
+
+ setTimeout(()=>{
+  letter.classList.add('show');
+  giftHint.textContent='A little message from Yash';
+  letter.scrollIntoView({behavior:'smooth',block:'center'});
+  celebrate();
+ },1050);
 }
+
 envelope.addEventListener('click',openEnvelope);
-envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope();}});
-document.getElementById('giftJump').addEventListener('click',()=>document.getElementById('giftSection').scrollIntoView({behavior:'smooth'}));
-document.getElementById('enterBtn').addEventListener('click',()=>document.querySelector('.scene').scrollIntoView({behavior:'smooth'}));
+
+envelope.addEventListener('keydown',e=>{
+ if(e.key==='Enter'||e.key===' '){
+  e.preventDefault();
+  openEnvelope();
+ }
+});
+
+document.getElementById('giftJump').addEventListener('click',()=>{
+ document.getElementById('giftSection').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('enterBtn').addEventListener('click',()=>{
+ document.querySelector('.scene').scrollIntoView({behavior:'smooth'});
+});
 
 document.getElementById('soundBtn').addEventListener('click',()=>{
-  document.getElementById('player').classList.add('show');
-  document.getElementById('player').scrollIntoView({behavior:'smooth',block:'center'});
+ document.getElementById('player').classList.add('show');
+ document.getElementById('player').scrollIntoView({behavior:'smooth',block:'center'});
 });
+
 document.getElementById('musicBtn').addEventListener('click',()=>{
-  const player=document.getElementById('player');
-  player.classList.add('show');
-  document.getElementById('youtubePlayer').src='https://www.youtube-nocookie.com/embed/cvUAzpn48xA?autoplay=1&rel=0&modestbranding=1';
-  document.getElementById('musicBtn').textContent='Your song is ready ♡';
-  player.scrollIntoView({behavior:'smooth',block:'center'});
+ const player=document.getElementById('player');
+ player.classList.add('show');
+
+ document.getElementById('youtubePlayer').src=
+ 'https://www.youtube-nocookie.com/embed/cvUAzpn48xA?autoplay=1&rel=0&modestbranding=1';
+
+ document.getElementById('musicBtn').textContent='Your song is ready ♡';
+ player.scrollIntoView({behavior:'smooth',block:'center'});
 });
-window.addEventListener('resize',()=>{const c=document.getElementById('confetti');c.width=0;c.height=0;});
+
+window.addEventListener('resize',()=>{
+ const c=document.getElementById('confetti');
+ c.width=0;
+ c.height=0;
+});
 </script>
 </body>
 </html>
